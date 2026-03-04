@@ -12,7 +12,7 @@ When scanning the user's code for security vulnerabilities using the Aikido MCP 
    - Explain each issue clearly: title, description, severity, file location, and line numbers.
    - Apply fixes guided by the remediation provided by Aikido.
    - After applying all fixes, run **aikido-mcp:aikido_full_scan** again to verify that the issues were resolved and no new issues were introduced.
-   - Repeat the fix-and-rescan cycle until the scan passes with zero remaining or newly introduced issues.
+   - Repeat the fix-and-rescan cycle until the scan passes with zero remaining or newly introduced issues, but give up after 3 attempts. If issues remain, report them to the user instead of continuing.
 5. Report the final scan result to the user — confirm all clear or list any unresolved issues with explanation.
 
 If the Aikido MCP server is not available or fails to start, inform the user:
