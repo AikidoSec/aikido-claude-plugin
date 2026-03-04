@@ -11,13 +11,19 @@ When helping the user configure the Aikido security plugin:
 
 ## If the user provided an API key as an argument:
 
-1. Run the following Bash command, replacing `<key>` with the provided argument value:
+1. Read `~/.claude/settings.json` (create it as `{}` if it doesn't exist).
+2. Merge `AIKIDO_API_KEY` into the `env` object, preserving all other existing settings. The result should look like:
+   ```json
+   {
+     "env": {
+       "AIKIDO_API_KEY": "<key>"
+     }
+   }
    ```
-   claude mcp add --scope user aikido-mcp -e "AIKIDO_API_KEY=<key>" -- npx -y @aikidosec/mcp
-   ```
-2. Confirm to the user that the API key has been saved to their Claude Code user settings and will apply to all projects.
-3. Inform the user that they need to restart Claude Code for the MCP server to pick up the new key.
-4. Offer to verify the setup after restart by running **aikido-mcp:aikido_full_scan** with a test payload.
+3. Write the updated JSON back to `~/.claude/settings.json`.
+4. Confirm to the user that the API key has been saved to their Claude Code user settings and will apply to all projects.
+5. Inform the user that they need to restart Claude Code for the MCP server to pick up the new key.
+6. Offer to verify the setup after restart by running **aikido-mcp:aikido_full_scan** with a test payload.
 
 ## If no API key was provided:
 
@@ -29,6 +35,5 @@ When helping the user configure the Aikido security plugin:
       ```
       /aikido:setup <my-key>
       ```
-
-   d. Remind the user to restart Claude Code after setting the key so the MCP server picks it up.
-   e. Offer to verify the setup after they have set the key by running the test scan again.
+   c. Remind the user to restart Claude Code after setting the key so the MCP server picks it up.
+   d. Offer to verify the setup after they have set the key by running the test scan again.
