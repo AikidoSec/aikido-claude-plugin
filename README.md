@@ -16,7 +16,13 @@ Brings [Aikido Security](https://aikido.dev) scanning directly into Claude Code.
 
 ## Installation
 
-Install the plugin from the Claude Code marketplace, then run the setup skill with your API key:
+Install the plugin from the Claude Code marketplace (coming soon).
+Or install via the Aikido plugin marketplace by running the following commands:
+- `/plugin marketplace add AikidoSec/aikido-claude-plugin`
+- `/plugin install aikido`
+- After install, run Run `/reload-plugins` to activate.
+
+Next run the setup skill with your API key:
 
 ```
 /aikido:setup your-key-here
