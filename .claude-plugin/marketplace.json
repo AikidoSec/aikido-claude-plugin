@@ -1,0 +1,16 @@
+{
+    "name": "aikido-plugins",
+    "metadata": {
+        "description": "Aikido Security scanning for Claude Code"
+    },
+    "owner": {
+        "name": "Aikido Security"
+    },
+    "plugins": [
+        {
+            "name": "aikido",
+            "source": "./",
+            "description": "Aikido Security scanning for Claude Code"
+        }
+    ]
+}
