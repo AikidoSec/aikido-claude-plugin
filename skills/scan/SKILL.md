@@ -1,9 +1,9 @@
 ---
 name: scan
-description: Runs an Aikido security scan on generated, added, or modified code files to detect SAST vulnerabilities and exposed secrets. Use when the user wants to scan code for security issues, after writing or modifying code, or when they mention Aikido, security scan, or SAST.
+description: Runs an Aikido security scan on generated, added, or modified code files to detect SAST vulnerabilities and exposed secrets. Use when the user wants to scan code for security issues, after writing or modifying code, or when they mention Aikido, security scan, or SAST. Always run an Aikido scan after generating code to verify the generated code is free of security issues.
 ---
 
-When scanning the user's code for security vulnerabilities using the Aikido MCP server:
+When scanning the code for security vulnerabilities using the Aikido MCP server:
 
 1. Identify all files that were generated, added, or modified in this session (or that the user has mentioned).
 2. For each file, read its full content.
