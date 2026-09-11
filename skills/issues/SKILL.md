@@ -11,14 +11,18 @@ When listing Aikido feed issues:
 4. Optional `issue_types` (array): `open_source`, `leaked_secret`, `cloud`, `sast`, `iac`, `surface_monitoring`, `malware`, `eol`, `mobile`, `docker_container`, `cloud_instance`, `scm_security`, `license`, `ai_pentest` — e.g. include `leaked_secret` for secrets. Omit when no category filter is needed.
 5. SLA filters (booleans): set `out_of_sla: true` when the user wants issues that are past their SLA, or `sla_due_soon: true` for issues approaching their SLA deadline.
 6. Pagination: use numeric `page` only when the user needs more than the first page of results (zero-indexed). Only 25 findings are reported per page. Report to the user if there are more findings on following pages.
-7. Present each issue exactly in this form (increment `#`):
+7. Detail lookup: pass `issue_id` (string) to fetch one issue with more detail than the list returns. Use it when the user asks to dig into, explain, triage or fix a specific issue, or names an issue by its ID. `issue_id` overrides every other filter — the call returns that single issue, so do not combine it with scope, type, SLA or pagination fields.
+8. Present each issue exactly in this form (increment `#`):
    ```
    Issue #1: <issue_title>
+    - ID: <issue_id>
     - Issue type: <issue_type>
     - Severity: <issue_severity> (<issue_severity_label>)
     - Remediation: <issue_remediation>
    ```
    Add extra bullets when the field is relevant, e.g. `File: <issue_file> (line <issue_start_line>)`, `Location: <location.type> <location.name> (<location.branch_name>)`, `Issue link: <issue_link>`, `SLA due date: <issue_remediate_by_date>`.
+9. For an `issue_id` lookup, keep the same format and then summarize the extra fields the detailed response carries.
+
 
 If the Aikido MCP server is not available or fails, inform the user:
 
