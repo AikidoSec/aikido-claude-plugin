@@ -1,5 +1,5 @@
 ---
-name: aikido-mcp-comments
+name: pr-comments
 description: Fetches comments already posted on a GitHub/GitLab/Azure DevOps pull or merge request (e.g. CI bot results, review feedback, Aikido's own scan-result comment). Use when the user asks what CI/CD said, wants to read/check/summarize PR or MR comments, mentions "pipeline comments", or asks about "Aikido comments"/"Aikido feedback"/what Aikido said or found on a PR — this reads via the native SCM CLI (gh/glab/az), not the Aikido MCP server.
 ---
 
