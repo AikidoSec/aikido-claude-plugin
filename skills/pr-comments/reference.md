@@ -7,6 +7,13 @@
 - **Fetch**, current branch's PR: `gh pr view --comments`
 - **Fetch**, specific PR: `gh pr view <number> --comments` (add `--repo org/repo` for a repo
   that isn't the current working directory).
+- **Fetch inline review comments** too: `--comments` leaves out line-level review comments,
+  which is where bots often post findings. Run this as well:
+  ```
+  gh api repos/{owner}/{repo}/pulls/<number>/comments --paginate \
+    --jq '.[] | "\(.user.login) \(.created_at) \(.path):\(.line // .original_line)\n\(.body)\n---"'
+  ```
+  `{owner}` and `{repo}` fill in from the current directory. For another repo, write them out.
 
 ## GitLab (`glab`)
 
